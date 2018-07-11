@@ -84,7 +84,6 @@
     "dev": "rimraf ./lib && babel -w src --out-dir lib --copy-files",
     "lint": "eslint src/**",
     "plaintest": "mocha --exit -t 10000 -b -R spec test/index.js && npm run tape",
-    "postinstall": "npm install babel-cli && npm run build",
     "prepublish": "npm run babel",
     "pre_test": "npm run lint",
     "tape": "node test/tape/index.js | tap-spec",
