@@ -935,7 +935,9 @@ assign(Builder.prototype, {
   },
 
   // Set a lock for update constraint.
-  forUpdate() {
+  forUpdate(lockTable, skipLocked) {
+    this._single.lockTable = lockTable;
+    this._single.skipLocked = skipLocked;
     this._single.lock = 'forUpdate';
     return this;
   },

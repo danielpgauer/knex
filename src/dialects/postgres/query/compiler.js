@@ -66,8 +66,8 @@ assign(QueryCompiler_PG.prototype, {
     return value ? ` returning ${this.formatter.columnize(value)}` : '';
   },
 
-  forUpdate() {
-    return 'for update';
+  forUpdate(table, skipLocked) {
+    return 'for update' + (table ? ' ON ' + table : '') + (skipLocked ? ' skip locked' : '');
   },
 
   forShare() {

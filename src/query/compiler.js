@@ -534,7 +534,7 @@ assign(QueryCompiler.prototype, {
   // Compiles the "locks".
   lock() {
     if (this.single.lock) {
-      return this[this.single.lock]();
+      return this[this.single.lock](this.single.lockTable, this.single.skipLocked);
     }
   },
 
